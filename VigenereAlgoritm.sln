@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VigenereAlgoritm", "VigenereAlgoritm\VigenereAlgoritm.csproj", "{72FC95D1-6350-4837-A7DE-390E7D181EE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VigenereAlgoritmTest", "VigenereAlgoritmTest\VigenereAlgoritmTest.csproj", "{0BE20E4C-CD14-48EC-9604-AD6AF4F7C67A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72FC95D1-6350-4837-A7DE-390E7D181EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72FC95D1-6350-4837-A7DE-390E7D181EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72FC95D1-6350-4837-A7DE-390E7D181EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72FC95D1-6350-4837-A7DE-390E7D181EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE20E4C-CD14-48EC-9604-AD6AF4F7C67A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE20E4C-CD14-48EC-9604-AD6AF4F7C67A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE20E4C-CD14-48EC-9604-AD6AF4F7C67A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE20E4C-CD14-48EC-9604-AD6AF4F7C67A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B01A16F6-C9DD-4212-B413-244ACE694652}
+	EndGlobalSection
+EndGlobal
