@@ -15,7 +15,7 @@ namespace Vigenere_Cipher
                 throw new ArgumentNullException($"Ключ {key} пуст");
             }
 
-            if (!AlgoritmHelper.IsKeyCorrect(key.ToLower()))
+            if (!AlgorithmHelper.IsKeyCorrect(key.ToLower()))
             {
                 throw new Exception($"Ключ {key} не соответствует алфавиту");
             }
@@ -25,7 +25,7 @@ namespace Vigenere_Cipher
                 throw new ArgumentNullException($"Массив с исходными данными пуст");
             }
 
-            return AlgoritmHelper.GetEncodeOrDencodeArray(source, key.ToLower(), Model.ActionMode.encrypt);
+            return AlgorithmHelper.GetEncodeOrDencodeArray(source, key.ToLower(), Model.ActionMode.encrypt);
         }
     }
 }

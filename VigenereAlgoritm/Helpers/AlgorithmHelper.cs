@@ -5,7 +5,7 @@ using Vigenere_Cipher.Model;
 
 namespace Vigenere_Cipher.Helpers
 {
-    internal static class AlgoritmHelper
+    internal static class AlgorithmHelper
     {
         /// <summary>
         /// Метод для кодирования\декодирования текста
