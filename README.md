@@ -5,14 +5,23 @@
 -------------------------------------------------------------
 * Подключить библиотеку через Reference
 * Язык, на котором происходит шифрование - Англ.
-* Использование 
+* Пример использования 
 
 ```C#
+//Список значения для шифрование\дешифрование
+var text = new string[] { "sample" };
+
+//Ключ для шифрование\дешифрование
+var key = "test";
+
 var vinegere = new Vigenere();
 
 //шифрование 
-var encryptResult = vinegere.Encrypt(IEnumerable<string> source, string key);
+var encryptResult = vinegere.Encrypt(text, key);
+Console.WriteLine(string.Join(Environment.NewLine, encryptResult)) //leeiei
 
 //дешифрование
-var dencryptResult = vinegere.Dencrypt(IEnumerable<string> source,string key);
+var dencryptResult = vinegere.Dencrypt(encryptResult, key);
+Console.WriteLine(string.Join(Environment.NewLine, dencryptResult)) //sample
+
 ```
