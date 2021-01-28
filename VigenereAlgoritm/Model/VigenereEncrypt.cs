@@ -10,7 +10,7 @@ namespace Vigenere_Cipher
     {
         public List<string> Encrypt(List<string> source, string key)
         {
-            if (!key.Any())
+            if (key == null || !key.Any())
             {
                 throw new ArgumentNullException($"Ключ {key} пуст");
             }

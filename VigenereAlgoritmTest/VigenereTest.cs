@@ -17,7 +17,7 @@ namespace VigenereCipherTest
         }
 
         [Fact]
-        public void MainEncrypt_CorrectData_ReturnList()
+        public void VigenereEncrypt_CorrectData_ReturnList()
         {
             var text = new string[] { "QWERTY", "qwerty" };
             var key = "test";
@@ -30,20 +30,21 @@ namespace VigenereCipherTest
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void MainEncrypt_EmptyKey_ReturnThrow(string key)
+        public void VigenereEncrypt_EmptyKey_ReturnThrow(string key)
         {
             var text = new string[] { "QWERTY", "qwerty" };
 
             Action action = () => vigenere.Encrypt(text, key);
 
             action.Should()
-                .Throw<ArgumentNullException>();
+                .Throw<ArgumentNullException>()
+                .WithMessage($"Value cannot be null. (Parameter 'Ключ  пуст')");
         }
 
         [Theory]
         [InlineData("ФысК")]
         [InlineData(" ")]
-        public void MainEncrypt_IncorrectKey_ReturnThrow(string key)
+        public void VigenereEncrypt_IncorrectKey_ReturnThrow(string key)
         {
             var text = new string[] { "QWERTY", "qwerty" };
 
@@ -55,7 +56,7 @@ namespace VigenereCipherTest
         }
 
         [Fact]
-        public void MainEncrypt_EmptyArray_ReturnThrow()
+        public void VigenereEncrypt_EmptyArray_ReturnThrow()
         {
             var text = new string[0];
             var key = "test";
@@ -67,7 +68,7 @@ namespace VigenereCipherTest
         }
 
         [Fact]
-        public void MainEncrypt_IncorrectArray_ReturnList()
+        public void VigenereEncrypt_IncorrectArray_ReturnList()
         {
             var text = new string[] { "ФыВаП" };
             var key = "test";
@@ -78,7 +79,7 @@ namespace VigenereCipherTest
         }
 
         [Fact]
-        public void MainDencrypt_CorrectData_ReturnList()
+        public void VigenereDencrypt_CorrectData_ReturnList()
         {
             var text = new string[] { "aiDEHa ohkpv!", "aideha ohkpv!" };
             var key = "test";
@@ -91,20 +92,21 @@ namespace VigenereCipherTest
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void MainDencrypt_EmptyKey_ReturnThrow(string key)
+        public void VigenereDencrypt_EmptyKey_ReturnThrow(string key)
         {
             var text = new string[] { "QWERTY", "qwerty" };
 
             Action action = () => vigenere.Dencrypt(text, key);
 
             action.Should()
-                .Throw<ArgumentNullException>();
+                .Throw<ArgumentNullException>()
+                 .WithMessage($"Value cannot be null. (Parameter 'Ключ  пуст')");
         }
 
         [Theory]
         [InlineData("ФысК")]
         [InlineData(" ")]
-        public void MainDencrypt_IncorrectKey_ReturnThrow(string key)
+        public void VigenereDencrypt_IncorrectKey_ReturnThrow(string key)
         {
             var text = new string[] { "QWERTY", "qwerty" };
 
@@ -116,7 +118,7 @@ namespace VigenereCipherTest
         }
 
         [Fact]
-        public void MainDencrypt_EmptyArray_ReturnThrow()
+        public void VigenereDencrypt_EmptyArray_ReturnThrow()
         {
             var text = new string[0];
             var key = "test";
@@ -128,7 +130,7 @@ namespace VigenereCipherTest
         }
 
         [Fact]
-        public void MainDencrypt_IncorrectArray_ReturnList()
+        public void VigenereDencrypt_IncorrectArray_ReturnList()
         {
             var text = new string[] { "ФыВаП" };
             var key = "test";

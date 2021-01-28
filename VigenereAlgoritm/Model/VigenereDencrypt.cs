@@ -9,8 +9,9 @@ namespace Vigenere_Cipher
     internal class VigenereDencrypt : IDencrypt
     {
         public List<string> Dencrypt(List<string> source, string key)
-        {
-            if (!key.Any())
+        {          
+
+            if ( key == null || !key.Any())
             {
                 throw new ArgumentNullException($"Ключ {key} пуст");
             }
