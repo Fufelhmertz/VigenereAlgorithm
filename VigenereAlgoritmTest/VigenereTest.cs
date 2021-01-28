@@ -7,13 +7,13 @@ using Xunit;
 namespace VigenereCipherTest
 {
     [ExcludeFromCodeCoverage]
-    public class MainTest
+    public class VigenereTest
     {
-        private Main main;
+        private Vigenere vigenere;
 
-        public MainTest()
+        public VigenereTest()
         {
-            main = new Main();
+            vigenere = new Vigenere();
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace VigenereCipherTest
             var text = new string[] { "QWERTY", "qwerty" };
             var key = "test";
 
-            var result = main.Encrypt(text, key);
+            var result = vigenere.Encrypt(text, key);
 
             result.Should().Contain("jawkmc");
         }
@@ -34,7 +34,7 @@ namespace VigenereCipherTest
         {
             var text = new string[] { "QWERTY", "qwerty" };
 
-            Action action = () => main.Encrypt(text, key);
+            Action action = () => vigenere.Encrypt(text, key);
 
             action.Should()
                 .Throw<ArgumentNullException>();
@@ -47,7 +47,7 @@ namespace VigenereCipherTest
         {
             var text = new string[] { "QWERTY", "qwerty" };
 
-            Action action = () => main.Encrypt(text, key);
+            Action action = () => vigenere.Encrypt(text, key);
 
             action.Should()
                 .Throw<Exception>()
@@ -60,7 +60,7 @@ namespace VigenereCipherTest
             var text = new string[0];
             var key = "test";
 
-            Action action = () => main.Encrypt(text, key);
+            Action action = () => vigenere.Encrypt(text, key);
 
             action.Should()
                 .Throw<ArgumentNullException>();
@@ -72,7 +72,7 @@ namespace VigenereCipherTest
             var text = new string[] { "ФыВаП" };
             var key = "test";
 
-            var result = main.Encrypt(text, key);
+            var result = vigenere.Encrypt(text, key);
 
             result.Should().Contain("фывап");
         }
@@ -83,7 +83,7 @@ namespace VigenereCipherTest
             var text = new string[] { "aiDEHa ohkpv!", "aideha ohkpv!" };
             var key = "test";
 
-            var result = main.Dencrypt(text, key);
+            var result = vigenere.Dencrypt(text, key);
 
             result.Should().Contain("hellow world!");
         }
@@ -95,7 +95,7 @@ namespace VigenereCipherTest
         {
             var text = new string[] { "QWERTY", "qwerty" };
 
-            Action action = () => main.Dencrypt(text, key);
+            Action action = () => vigenere.Dencrypt(text, key);
 
             action.Should()
                 .Throw<ArgumentNullException>();
@@ -108,7 +108,7 @@ namespace VigenereCipherTest
         {
             var text = new string[] { "QWERTY", "qwerty" };
 
-            Action action = () => main.Dencrypt(text, key);
+            Action action = () => vigenere.Dencrypt(text, key);
 
             action.Should()
                 .Throw<Exception>()
@@ -121,7 +121,7 @@ namespace VigenereCipherTest
             var text = new string[0];
             var key = "test";
 
-            Action action = () => main.Dencrypt(text, key);
+            Action action = () => vigenere.Dencrypt(text, key);
 
             action.Should()
                 .Throw<ArgumentNullException>();
@@ -133,7 +133,7 @@ namespace VigenereCipherTest
             var text = new string[] { "ФыВаП" };
             var key = "test";
 
-            var result = main.Dencrypt(text, key);
+            var result = vigenere.Dencrypt(text, key);
 
             result.Should().Contain("фывап");
         }

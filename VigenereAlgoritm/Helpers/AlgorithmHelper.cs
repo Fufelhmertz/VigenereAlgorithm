@@ -2,6 +2,7 @@
 using System.Text;
 using Vigenere_Cipher.Infrastructures;
 using Vigenere_Cipher.Model;
+using System;
 
 namespace Vigenere_Cipher.Helpers
 {
@@ -26,6 +27,10 @@ namespace Vigenere_Cipher.Helpers
 
                 foreach (var element in word.ToLower())
                 {
+                    if(element == null)
+                    {
+                        throw new ArgumentNullException("Одно из значений массива содержит null");
+                    }
 
                     if (!Alphabet.EngAlphabet.Contains(element))
                     {
@@ -51,6 +56,9 @@ namespace Vigenere_Cipher.Helpers
             return result;
         }
 
+        /// <summary>
+        /// Метод для проверки валидности ключа
+        /// </summary>        
         internal static bool IsKeyCorrect(string key)
         {
             foreach (var element in key)
